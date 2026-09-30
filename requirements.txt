@@ -1,0 +1,7 @@
+pandas>=2.2
+numpy>=1.26
+scipy>=1.11
+pyarrow>=15
+networkx>=3.2
+matplotlib>=3.8
+jupyter

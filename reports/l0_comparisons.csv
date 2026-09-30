@@ -1,0 +1,7 @@
+comparison,metric,diff,ci_low,ci_high
+"L0 (npxG ratings, Dixon–Coles) minus L0 without Dixon–Coles",rps,-0.0002927019523826332,-0.0013606538785065857,0.0007371841768333467
+"L0 (npxG ratings, Dixon–Coles) minus L0 without Dixon–Coles",log_loss,-0.004149447050097189,-0.015353353829633537,0.006545987580882799
+"L0 (npxG ratings, Dixon–Coles) minus Goals ratings",rps,-0.0018827027474213455,-0.009123848908760487,0.005443191779557355
+"L0 (npxG ratings, Dixon–Coles) minus Goals ratings",log_loss,-0.007382910470039545,-0.029523019805833738,0.014513280486412566
+"L0 (npxG ratings, Dixon–Coles) minus Base rates",rps,-0.02053155122352409,-0.03137385056408999,-0.00960634077803308
+"L0 (npxG ratings, Dixon–Coles) minus Base rates",log_loss,-0.057076898574533026,-0.08830842439681669,-0.02464600346096792
