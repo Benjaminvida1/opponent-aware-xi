@@ -1,0 +1,253 @@
+season_fit,component,metric,label,loading
+2024/2025,1,centroid_x,Centroid height (m),0.11492245690309144
+2024/2025,1,def_line_height,Defensive line height (m),0.21178621558228683
+2024/2025,1,att_height,Attacking height (m),0.16708134682165623
+2024/2025,1,width,Team width (m),-0.1831140896370385
+2024/2025,1,compactness,Hull area of average positions (m²),-0.047875760974325034
+2024/2025,1,passes,Completed passes,0.3193954105908428
+2024/2025,1,entropy,Pass entropy,-0.28414972725855003
+2024/2025,1,gini_strength,Strength inequality (Gini),0.24796788971335518
+2024/2025,1,reciprocity,Reciprocity,0.30815045106468475
+2024/2025,1,clustering,Weighted clustering,-0.19270013654473692
+2024/2025,1,verticality,Verticality (m per pass),-0.2889942715955453
+2024/2025,1,forward_share,Forward-pass share,-0.21002945592743924
+2024/2025,1,pass_span,Mean pass span (m),-0.23476569995873445
+2024/2025,1,flank_share,Flank share,-0.1739441407105948
+2024/2025,1,gk_share,GK involvement,-0.056342380421983675
+2024/2025,1,max_betweenness,Hub dependence (max betweenness),0.26087774802982927
+2024/2025,1,poss,Possession share,0.30793249174569115
+2024/2025,1,log_ppda,PPDA proxy (log),0.16295420558922344
+2024/2025,1,box_entries,Box touches per 90 of possession,-0.036793116577489585
+2024/2025,1,cross_tendency,Crosses per pass into final third,-0.07598009990241462
+2024/2025,1,long_ball_share,Long balls per pass attempted,-0.29854874908807616
+2024/2025,2,centroid_x,Centroid height (m),0.40795869903886123
+2024/2025,2,def_line_height,Defensive line height (m),0.32463720711567734
+2024/2025,2,att_height,Attacking height (m),0.31248956766786334
+2024/2025,2,width,Team width (m),-0.29964291507053215
+2024/2025,2,compactness,Hull area of average positions (m²),-0.28588298191125266
+2024/2025,2,passes,Completed passes,-0.041712050877603865
+2024/2025,2,entropy,Pass entropy,0.24837020287832604
+2024/2025,2,gini_strength,Strength inequality (Gini),-0.14639359338370098
+2024/2025,2,reciprocity,Reciprocity,-0.1295112139176755
+2024/2025,2,clustering,Weighted clustering,0.27098877001896776
+2024/2025,2,verticality,Verticality (m per pass),0.005793106859016636
+2024/2025,2,forward_share,Forward-pass share,0.03726565796690878
+2024/2025,2,pass_span,Mean pass span (m),-0.01081167724649872
+2024/2025,2,flank_share,Flank share,-0.2949441013004616
+2024/2025,2,gk_share,GK involvement,0.08551618024546379
+2024/2025,2,max_betweenness,Hub dependence (max betweenness),-0.013677000529544195
+2024/2025,2,poss,Possession share,-0.023548519822930717
+2024/2025,2,log_ppda,PPDA proxy (log),-0.061956901342487464
+2024/2025,2,box_entries,Box touches per 90 of possession,0.3601483162081551
+2024/2025,2,cross_tendency,Crosses per pass into final third,-0.18130196872660387
+2024/2025,2,long_ball_share,Long balls per pass attempted,0.14473149899633242
+2024/2025,3,centroid_x,Centroid height (m),0.21393134741549494
+2024/2025,3,def_line_height,Defensive line height (m),0.1661537303425532
+2024/2025,3,att_height,Attacking height (m),0.3671858379293397
+2024/2025,3,width,Team width (m),0.27914939610948086
+2024/2025,3,compactness,Hull area of average positions (m²),0.45867000698817295
+2024/2025,3,passes,Completed passes,0.10387964813748354
+2024/2025,3,entropy,Pass entropy,-0.03237725570222386
+2024/2025,3,gini_strength,Strength inequality (Gini),-0.043942634080881955
+2024/2025,3,reciprocity,Reciprocity,0.11892072508922043
+2024/2025,3,clustering,Weighted clustering,-0.04049578183349554
+2024/2025,3,verticality,Verticality (m per pass),0.13219126693163608
+2024/2025,3,forward_share,Forward-pass share,0.286400422605366
+2024/2025,3,pass_span,Mean pass span (m),0.3192943136947411
+2024/2025,3,flank_share,Flank share,0.05206754382938044
+2024/2025,3,gk_share,GK involvement,-0.18250215867940497
+2024/2025,3,max_betweenness,Hub dependence (max betweenness),-0.026067710820135613
+2024/2025,3,poss,Possession share,0.20165256225362074
+2024/2025,3,log_ppda,PPDA proxy (log),-0.21659245209178948
+2024/2025,3,box_entries,Box touches per 90 of possession,0.21821032973340537
+2024/2025,3,cross_tendency,Crosses per pass into final third,0.2566658415965809
+2024/2025,3,long_ball_share,Long balls per pass attempted,-0.18636178013301855
+2024/2025,4,centroid_x,Centroid height (m),-0.18503059849486678
+2024/2025,4,def_line_height,Defensive line height (m),-0.09127835184668809
+2024/2025,4,att_height,Attacking height (m),-0.03673061892014148
+2024/2025,4,width,Team width (m),-0.19276589223363474
+2024/2025,4,compactness,Hull area of average positions (m²),-0.004432741275213821
+2024/2025,4,passes,Completed passes,-0.08332160460583016
+2024/2025,4,entropy,Pass entropy,-0.10373972039957555
+2024/2025,4,gini_strength,Strength inequality (Gini),0.36659473129391834
+2024/2025,4,reciprocity,Reciprocity,-0.10188177383795032
+2024/2025,4,clustering,Weighted clustering,-0.3688426143833591
+2024/2025,4,verticality,Verticality (m per pass),0.04118910575026846
+2024/2025,4,forward_share,Forward-pass share,0.31432142180278716
+2024/2025,4,pass_span,Mean pass span (m),0.15173505153501612
+2024/2025,4,flank_share,Flank share,-0.335193824694566
+2024/2025,4,gk_share,GK involvement,0.4875407029348864
+2024/2025,4,max_betweenness,Hub dependence (max betweenness),0.0567058990104451
+2024/2025,4,poss,Possession share,0.0552318595949187
+2024/2025,4,log_ppda,PPDA proxy (log),-0.3529982609422701
+2024/2025,4,box_entries,Box touches per 90 of possession,0.12183746969736146
+2024/2025,4,cross_tendency,Crosses per pass into final third,-0.0056093326122341625
+2024/2025,4,long_ball_share,Long balls per pass attempted,0.03263421703794271
+2025/2026,1,centroid_x,Centroid height (m),0.1344548650621115
+2025/2026,1,def_line_height,Defensive line height (m),0.2270041996148826
+2025/2026,1,att_height,Attacking height (m),0.18224803792908192
+2025/2026,1,width,Team width (m),-0.13764920233343686
+2025/2026,1,compactness,Hull area of average positions (m²),-0.07607075221853614
+2025/2026,1,passes,Completed passes,0.3159117644928509
+2025/2026,1,entropy,Pass entropy,-0.2826668853150072
+2025/2026,1,gini_strength,Strength inequality (Gini),0.2450945557402573
+2025/2026,1,reciprocity,Reciprocity,0.3034737173559398
+2025/2026,1,clustering,Weighted clustering,-0.1878436547296655
+2025/2026,1,verticality,Verticality (m per pass),-0.2755574941219396
+2025/2026,1,forward_share,Forward-pass share,-0.2206013070847879
+2025/2026,1,pass_span,Mean pass span (m),-0.23753207457660955
+2025/2026,1,flank_share,Flank share,-0.1736576869566445
+2025/2026,1,gk_share,GK involvement,-0.0783609095159754
+2025/2026,1,max_betweenness,Hub dependence (max betweenness),0.2624133441932595
+2025/2026,1,poss,Possession share,0.30479369198982165
+2025/2026,1,log_ppda,PPDA proxy (log),0.16749513443198963
+2025/2026,1,box_entries,Box touches per 90 of possession,-0.020128431937811712
+2025/2026,1,cross_tendency,Crosses per pass into final third,-0.0790740921251129
+2025/2026,1,long_ball_share,Long balls per pass attempted,-0.30249076216173587
+2025/2026,2,centroid_x,Centroid height (m),0.39777454056359496
+2025/2026,2,def_line_height,Defensive line height (m),0.2879102017658173
+2025/2026,2,att_height,Attacking height (m),0.27153254910844954
+2025/2026,2,width,Team width (m),-0.32993722013578863
+2025/2026,2,compactness,Hull area of average positions (m²),-0.32265256883643684
+2025/2026,2,passes,Completed passes,-0.05418952193968044
+2025/2026,2,entropy,Pass entropy,0.2507482192059965
+2025/2026,2,gini_strength,Strength inequality (Gini),-0.16996802092757185
+2025/2026,2,reciprocity,Reciprocity,-0.13031392464028255
+2025/2026,2,clustering,Weighted clustering,0.2956945271351451
+2025/2026,2,verticality,Verticality (m per pass),0.01672318206193409
+2025/2026,2,forward_share,Forward-pass share,-0.018647353542851894
+2025/2026,2,pass_span,Mean pass span (m),-0.03130953391207597
+2025/2026,2,flank_share,Flank share,-0.2877779404878402
+2025/2026,2,gk_share,GK involvement,0.07604280188886278
+2025/2026,2,max_betweenness,Hub dependence (max betweenness),-0.07249738467594495
+2025/2026,2,poss,Possession share,-0.0528271930717096
+2025/2026,2,log_ppda,PPDA proxy (log),0.04699047380874073
+2025/2026,2,box_entries,Box touches per 90 of possession,0.29754390778807055
+2025/2026,2,cross_tendency,Crosses per pass into final third,-0.2380588051839046
+2025/2026,2,long_ball_share,Long balls per pass attempted,0.16555149037711017
+2025/2026,3,centroid_x,Centroid height (m),0.18227555989110772
+2025/2026,3,def_line_height,Defensive line height (m),0.2035732104939525
+2025/2026,3,att_height,Attacking height (m),0.36361058769390237
+2025/2026,3,width,Team width (m),0.10308869598493006
+2025/2026,3,compactness,Hull area of average positions (m²),0.3301994237961416
+2025/2026,3,passes,Completed passes,-0.005690077564568621
+2025/2026,3,entropy,Pass entropy,-0.10099586067802982
+2025/2026,3,gini_strength,Strength inequality (Gini),0.15382658170576607
+2025/2026,3,reciprocity,Reciprocity,-0.06072072648914087
+2025/2026,3,clustering,Weighted clustering,-0.1938967714539029
+2025/2026,3,verticality,Verticality (m per pass),0.26339799985318907
+2025/2026,3,forward_share,Forward-pass share,0.3761409270292838
+2025/2026,3,pass_span,Mean pass span (m),0.3515856661029441
+2025/2026,3,flank_share,Flank share,0.024559240431501792
+2025/2026,3,gk_share,GK involvement,0.1282756730247921
+2025/2026,3,max_betweenness,Hub dependence (max betweenness),0.19680526225326697
+2025/2026,3,poss,Possession share,0.12174164175637384
+2025/2026,3,log_ppda,PPDA proxy (log),-0.0820527371340464
+2025/2026,3,box_entries,Box touches per 90 of possession,0.3685207451736809
+2025/2026,3,cross_tendency,Crosses per pass into final third,0.21246220458877418
+2025/2026,3,long_ball_share,Long balls per pass attempted,-0.07429226454697507
+2025/2026,4,centroid_x,Centroid height (m),-0.24520136561332215
+2025/2026,4,def_line_height,Defensive line height (m),-0.1454623535230036
+2025/2026,4,att_height,Attacking height (m),-0.19678169101695683
+2025/2026,4,width,Team width (m),-0.30381076051204364
+2025/2026,4,compactness,Hull area of average positions (m²),-0.17132141456392116
+2025/2026,4,passes,Completed passes,-0.17489108339960693
+2025/2026,4,entropy,Pass entropy,-0.11894502277420717
+2025/2026,4,gini_strength,Strength inequality (Gini),0.3449113031985841
+2025/2026,4,reciprocity,Reciprocity,-0.17312897972936045
+2025/2026,4,clustering,Weighted clustering,-0.3719357669910366
+2025/2026,4,verticality,Verticality (m per pass),-0.05439733521236138
+2025/2026,4,forward_share,Forward-pass share,0.015005991725547237
+2025/2026,4,pass_span,Mean pass span (m),-0.03300277090692539
+2025/2026,4,flank_share,Flank share,-0.31083383000299325
+2025/2026,4,gk_share,GK involvement,0.40891065175470837
+2025/2026,4,max_betweenness,Hub dependence (max betweenness),0.1340983214183945
+2025/2026,4,poss,Possession share,-0.09773319735567836
+2025/2026,4,log_ppda,PPDA proxy (log),-0.2648816431100051
+2025/2026,4,box_entries,Box touches per 90 of possession,0.16346791886297315
+2025/2026,4,cross_tendency,Crosses per pass into final third,-0.12067303242826953
+2025/2026,4,long_ball_share,Long balls per pass attempted,0.13875983680850945
+2026/2027,1,centroid_x,Centroid height (m),0.14907222296108028
+2026/2027,1,def_line_height,Defensive line height (m),0.2365301653405963
+2026/2027,1,att_height,Attacking height (m),0.20281759379528044
+2026/2027,1,width,Team width (m),-0.11949507236922038
+2026/2027,1,compactness,Hull area of average positions (m²),-0.05829025390879302
+2026/2027,1,passes,Completed passes,0.3241927723665823
+2026/2027,1,entropy,Pass entropy,-0.28495737102804125
+2026/2027,1,gini_strength,Strength inequality (Gini),0.24109548239169973
+2026/2027,1,reciprocity,Reciprocity,0.31113555011558236
+2026/2027,1,clustering,Weighted clustering,-0.17961752612354462
+2026/2027,1,verticality,Verticality (m per pass),-0.2613085787898799
+2026/2027,1,forward_share,Forward-pass share,-0.20664529661477826
+2026/2027,1,pass_span,Mean pass span (m),-0.19484964661541546
+2026/2027,1,flank_share,Flank share,-0.1641521236126875
+2026/2027,1,gk_share,GK involvement,-0.06447099267535435
+2026/2027,1,max_betweenness,Hub dependence (max betweenness),0.26917960243919475
+2026/2027,1,poss,Possession share,0.3142821843943942
+2026/2027,1,log_ppda,PPDA proxy (log),0.18114003156464686
+2026/2027,1,box_entries,Box touches per 90 of possession,-0.003577172574024043
+2026/2027,1,cross_tendency,Crosses per pass into final third,-0.08769827172207409
+2026/2027,1,long_ball_share,Long balls per pass attempted,-0.31260672871312556
+2026/2027,2,centroid_x,Centroid height (m),0.3590992179711704
+2026/2027,2,def_line_height,Defensive line height (m),0.2590462433388087
+2026/2027,2,att_height,Attacking height (m),0.18134469814512622
+2026/2027,2,width,Team width (m),-0.31690274186141826
+2026/2027,2,compactness,Hull area of average positions (m²),-0.36109136923391416
+2026/2027,2,passes,Completed passes,-0.05079883801724227
+2026/2027,2,entropy,Pass entropy,0.27423387022173173
+2026/2027,2,gini_strength,Strength inequality (Gini),-0.23247176725860383
+2026/2027,2,reciprocity,Reciprocity,-0.0853602177737829
+2026/2027,2,clustering,Weighted clustering,0.33939508966861076
+2026/2027,2,verticality,Verticality (m per pass),-0.03757764041821606
+2026/2027,2,forward_share,Forward-pass share,-0.09998423801192845
+2026/2027,2,pass_span,Mean pass span (m),-0.13476413779290988
+2026/2027,2,flank_share,Flank share,-0.25043537989107506
+2026/2027,2,gk_share,GK involvement,0.006767970349442324
+2026/2027,2,max_betweenness,Hub dependence (max betweenness),-0.1231903659921665
+2026/2027,2,poss,Possession share,-0.07044887138833887
+2026/2027,2,log_ppda,PPDA proxy (log),0.082781266116357
+2026/2027,2,box_entries,Box touches per 90 of possession,0.26602968882559735
+2026/2027,2,cross_tendency,Crosses per pass into final third,-0.262177487908253
+2026/2027,2,long_ball_share,Long balls per pass attempted,0.16463552009651058
+2026/2027,3,centroid_x,Centroid height (m),0.33704325599523255
+2026/2027,3,def_line_height,Defensive line height (m),0.28393724480920157
+2026/2027,3,att_height,Attacking height (m),0.43594992396721866
+2026/2027,3,width,Team width (m),0.2225396270648308
+2026/2027,3,compactness,Hull area of average positions (m²),0.2932933811691813
+2026/2027,3,passes,Completed passes,0.05407044311485707
+2026/2027,3,entropy,Pass entropy,0.03241602394067831
+2026/2027,3,gini_strength,Strength inequality (Gini),0.006722261838270487
+2026/2027,3,reciprocity,Reciprocity,-0.011572570822546768
+2026/2027,3,clustering,Weighted clustering,0.07580050121605349
+2026/2027,3,verticality,Verticality (m per pass),0.26163264917057727
+2026/2027,3,forward_share,Forward-pass share,0.307286419188006
+2026/2027,3,pass_span,Mean pass span (m),0.36486900060640837
+2026/2027,3,flank_share,Flank share,0.2255117583185729
+2026/2027,3,gk_share,GK involvement,-0.007970343386914325
+2026/2027,3,max_betweenness,Hub dependence (max betweenness),0.07329101584337461
+2026/2027,3,poss,Possession share,0.1243474333673141
+2026/2027,3,log_ppda,PPDA proxy (log),0.07074996862433326
+2026/2027,3,box_entries,Box touches per 90 of possession,0.2777201552740146
+2026/2027,3,cross_tendency,Crosses per pass into final third,0.11942049083623996
+2026/2027,3,long_ball_share,Long balls per pass attempted,-0.07829947353683049
+2026/2027,4,centroid_x,Centroid height (m),-0.03672145050500101
+2026/2027,4,def_line_height,Defensive line height (m),0.053192852148730374
+2026/2027,4,att_height,Attacking height (m),0.018732822296227945
+2026/2027,4,width,Team width (m),-0.2686646309926884
+2026/2027,4,compactness,Hull area of average positions (m²),-0.11691613665868807
+2026/2027,4,passes,Completed passes,-0.18224916824412518
+2026/2027,4,entropy,Pass entropy,-0.128860026707369
+2026/2027,4,gini_strength,Strength inequality (Gini),0.3283423226785471
+2026/2027,4,reciprocity,Reciprocity,-0.21746707138178348
+2026/2027,4,clustering,Weighted clustering,-0.369257755728822
+2026/2027,4,verticality,Verticality (m per pass),0.08866643018805179
+2026/2027,4,forward_share,Forward-pass share,0.11241151189636397
+2026/2027,4,pass_span,Mean pass span (m),0.16433396092985866
+2026/2027,4,flank_share,Flank share,-0.293460511251164
+2026/2027,4,gk_share,GK involvement,0.4716818044333443
+2026/2027,4,max_betweenness,Hub dependence (max betweenness),0.23353737147679687
+2026/2027,4,poss,Possession share,-0.050517860285586025
+2026/2027,4,log_ppda,PPDA proxy (log),-0.21591487185572822
+2026/2027,4,box_entries,Box touches per 90 of possession,0.28706079216961206
+2026/2027,4,cross_tendency,Crosses per pass into final third,0.07309009635220245
+2026/2027,4,long_ball_share,Long balls per pass attempted,0.14417324499592601

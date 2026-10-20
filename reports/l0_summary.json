@@ -1,31 +1,123 @@
 {
-  "chosen": {
-    "half_life_days": 270.0,
-    "ridge": 4.0
+  "split": {
+    "warmup": "2023/2024",
+    "tuning": "2024/2025",
+    "test": [
+      "2025/2026",
+      "2026/2027"
+    ],
+    "n_tune": 380,
+    "n_test": 430
   },
-  "n_test": 190,
-  "outcome_mix": {
-    "predicted": {
-      "home": 0.421,
-      "draw": 0.277,
-      "away": 0.301
+  "chosen": {
+    "npxg": {
+      "half_life_days": 540.0,
+      "ridge": 4.0,
+      "carry": 0.75,
+      "response": "npxg"
     },
-    "observed": {
-      "home": 0.384,
-      "draw": 0.295,
-      "away": 0.321
+    "goals": {
+      "half_life_days": 540.0,
+      "ridge": 4.0,
+      "carry": 0.75,
+      "response": "goals"
+    },
+    "n_tied": 30,
+    "best_by_deviance_alone": {
+      "half_life_days": 180.0,
+      "ridge": 4.0,
+      "carry": 0.75,
+      "response": "npxg"
+    },
+    "tune_scores": {
+      "npxg_dev": 0.35160072829667877,
+      "rps": 0.1954871125503348,
+      "log_loss": 0.9672351193258895
+    },
+    "tune_scores_goals_model": {
+      "rps": 0.1987776594664159,
+      "log_loss": 0.9756994109472304
     }
   },
-  "rolling_five_corr": 0.5477822904509277,
-  "rolling_five_n": 324,
+  "season_carryover_omega": {
+    "2023/2024 -> 2024/2025": {
+      "n": 17,
+      "omega": 0.643574568211805,
+      "ci": [
+        0.46581014267611837,
+        0.8690852138691751
+      ],
+      "r": 0.8407094139748995
+    },
+    "2024/2025 -> 2025/2026": {
+      "n": 17,
+      "omega": 0.7744824267113553,
+      "ci": [
+        0.44328522329426295,
+        1.2220688801527846
+      ],
+      "r": 0.7705454023811394
+    },
+    "pooled": {
+      "n": 34,
+      "omega": 0.6838640383051734,
+      "ci": [
+        0.5021888893738903,
+        0.906011486998292
+      ],
+      "r": 0.7870197641337509
+    }
+  },
+  "test_outcome_mix": {
+    "L0": {
+      "predicted": {
+        "home": 0.423,
+        "draw": 0.248,
+        "away": 0.328
+      },
+      "observed": {
+        "home": 0.419,
+        "draw": 0.279,
+        "away": 0.302
+      }
+    },
+    "market": {
+      "predicted": {
+        "home": 0.432,
+        "draw": 0.246,
+        "away": 0.322
+      },
+      "observed": {
+        "home": 0.419,
+        "draw": 0.279,
+        "away": 0.302
+      }
+    }
+  },
+  "l0_share_of_market_gain_over_base_rates_rps": 0.7698521559535895,
+  "tuning_season_reference": {
+    "L0": {
+      "n": 380,
+      "rps": 0.19540031121572005,
+      "log_loss": 0.9657692266946212,
+      "npxg_deviance": 0.35160072829667877
+    },
+    "market": {
+      "n": 380,
+      "rps": 0.19629111742855102,
+      "log_loss": 0.9677686847968537
+    }
+  },
+  "rolling_five_corr": 0.4652717795408449,
+  "rolling_five_n": 421,
   "ratings_as_of": "2026-09-21 15:30:00+00:00",
   "dc_rho_range": [
-    -0.19156511002141172,
-    0.01669848335702052
+    -0.09067217616696195,
+    -0.014338079047351085
   ],
   "calib_c_range": [
-    0.9633101040296949,
-    1.042649711545703
+    1.0004215145742732,
+    1.0228428737866198
   ],
-  "home_advantage_multiplier": 1.247173969858048
+  "home_advantage_multiplier": 1.1822669881891763
 }

@@ -1,0 +1,67 @@
+{
+  "K": 10,
+  "n_pc": 8,
+  "covariance": "tied",
+  "min_minutes": 900,
+  "player_seasons": {
+    "2023/2024": 312,
+    "2024/2025": 295,
+    "2025/2026": 316,
+    "2026/2027": 0
+  },
+  "bic_best_K": 12,
+  "pca_variance_kept": {
+    "2024/2025": 0.9334654956874251,
+    "2025/2026": 0.93365108524627,
+    "2026/2027": 0.934021421933535
+  },
+  "stability_tuning": {
+    "K": 10,
+    "mean_matched_role_corr": 0.9381547085638096,
+    "mean_matched_dist": 1.4549217852591694,
+    "same_role_share": 0.652542372881356,
+    "adjusted_rand": 0.5086514048563165,
+    "n_players_both_halves": 236
+  },
+  "stability_test": {
+    "K": 10,
+    "mean_matched_role_corr": 0.8361495076240784,
+    "mean_matched_dist": 2.234365550372791,
+    "same_role_share": 0.5319148936170213,
+    "adjusted_rand": 0.5223539325079166,
+    "n_players_both_halves": 235
+  },
+  "season_to_season_same_role": {
+    "2023/2024->2024/2025": {
+      "n": 184,
+      "same_role": 0.8478260869565217
+    },
+    "2024/2025->2025/2026": {
+      "n": 187,
+      "same_role": 0.8449197860962567
+    }
+  },
+  "refit_mean_shift_sd": {
+    "2025/2026": 0.48176220258072544,
+    "2026/2027": 0.386022669139724
+  },
+  "refit_order_kept": {
+    "2025/2026": true,
+    "2026/2027": true
+  },
+  "membership_rows": 29511,
+  "median_top_prob_test": 0.9916576920540685,
+  "share_rows_top_prob_below_0_6_test": 0.04946951297456219,
+  "role_names": {
+    "1": "Target striker",
+    "2": "Full-back",
+    "3": "Creative attacking midfielder",
+    "4": "Ball-winning midfielder",
+    "5": "Ball-playing centre-back",
+    "6": "Mobile striker",
+    "7": "Winger / inside forward",
+    "8": "Stopper centre-back",
+    "9": "Deep playmaker",
+    "10": "Box-to-box midfielder"
+  }
+}

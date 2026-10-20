@@ -1,0 +1,18 @@
+{
+  "n_profile_rows": 43392,
+  "n_players": 1291,
+  "n_features": 38,
+  "test_rows": 12164,
+  "features_better_than_group_mean_test": 38,
+  "features_better_than_unshrunk_test": 35,
+  "features_worse_than_unshrunk_test": 0,
+  "adjusted_features": 27,
+  "adjustment_helps_test": 22,
+  "adjustment_hurts_test": 0,
+  "median_gain_vs_group_mean_pct": 9.068485187240473,
+  "median_gain_vs_unshrunk_pct": 27.50530033238963,
+  "omega_sub_chosen": [
+    1.0
+  ],
+  "rows_without_group": 7007
+}

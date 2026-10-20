@@ -1,9 +1,16 @@
 {
-  "team_matches_with_metrics": 860,
-  "npxg_minus_points_r": {
-    "diff_r": 0.115741694345592,
-    "ci_low": -0.05020720292133069,
-    "ci_high": 0.3146676413662104
+  "team_matches_with_metrics": 2380,
+  "team_matches_by_season": {
+    "2023/2024": 760,
+    "2024/2025": 760,
+    "2025/2026": 760,
+    "2026/2027": 100
   },
-  "corr_points_xpts_season": 0.8572323834002451
+  "npxg_minus_points_r_pooled": {
+    "diff_r": 0.08660460806103176,
+    "ci_low": 0.005523454285843271,
+    "ci_high": 0.17695116016805607
+  },
+  "corr_points_xpts_season": 0.9075759526941085,
+  "mean_abs_points_minus_xpts": 7.16894271396501
 }

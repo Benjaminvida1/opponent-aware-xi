@@ -1,0 +1,90 @@
+{
+  "matches": 1190,
+  "matches_by_season": {
+    "2023/2024": 380,
+    "2024/2025": 380,
+    "2025/2026": 380,
+    "2026/2027": 50
+  },
+  "every_table_covers_every_match": {
+    "player_match": true,
+    "shots": true,
+    "network_nodes": true,
+    "network_edges": true,
+    "odds": true
+  },
+  "shot_goals_match_final_scores": 1190,
+  "team_matches_with_11_starters": "2380 of 2380",
+  "squad_size_counts": {
+    "18": 5,
+    "19": 47,
+    "20": 2328
+  },
+  "player_match_rows_dropped (no team, no stats)": 41,
+  "source_half_time_score_agrees_with_shots": 1071,
+  "blank_counts_among_players_who_appeared": 0,
+  "players_who_appeared": 35981,
+  "unused_subs": 11562,
+  "red_cards": 160,
+  "matches_with_physical_data": {
+    "2023/2024": 0,
+    "2024/2025": 0,
+    "2025/2026": 283,
+    "2026/2027": 50
+  },
+  "shots_joined_to_player_match": 1.0,
+  "raw_network_nodes_joined_to_player_match": 1.0,
+  "players_who_appeared_with_a_node": "35981 of 35981",
+  "nodes_without_coordinates (appeared, no passes)": 42,
+  "networks_with_11_starters": "2380 of 2380",
+  "edges_with_both_players_as_nodes": 1.0,
+  "edge_out_sum_vs_node_passes_within_2": 1.0,
+  "node_passes_vs_player_accurate_passes": {
+    "median": 0.0,
+    "within_2": 0.9493065784719713
+  },
+  "node_x_m_range": [
+    0.0,
+    102.69
+  ],
+  "node_y_m_range": [
+    0.0,
+    66.946
+  ],
+  "mean_node_y_m_by_label": {
+    "LB": 54.8,
+    "LCB": 44.9,
+    "RCB": 23.9,
+    "RB": 13.6,
+    "LW": 49.9,
+    "RW": 17.9,
+    "GK": 33.7,
+    "ST": 35.1
+  },
+  "penalty_shot_median_xy_m": {
+    "x_m": 94.0,
+    "y_m": 34.0
+  },
+  "starters_missing_position_label": 7655,
+  "sub_on_minute_within_1_of_network (where network has it)": 0.99967958987504,
+  "sub_on_minute_taken_from_network": 52,
+  "odds_matched": 1190,
+  "odds_overround_median": 1.0553866227800337,
+  "league_matches_in_fixtures_for_both_teams": 1190,
+  "fixtures_by_competition": {
+    "Premier League": 3040,
+    "EFL Cup": 211,
+    "FA Cup": 188,
+    "Champions League": 187,
+    "Europa League": 113,
+    "Conference League": 46
+  },
+  "fixture_duplicates_dropped": 47,
+  "player_match_ids_in_players_table": 1.0,
+  "players_missing": {
+    "date_of_birth": 0.002,
+    "preferred_foot": 0.061,
+    "height_cm": 0.105
+  },
+  "formations_valid": true
+}

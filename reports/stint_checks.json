@@ -1,0 +1,48 @@
+{
+  "npxg_reconciles_team_matches": 1.0,
+  "shots_assigned": 31233,
+  "shots_total": 31233,
+  "duration_equals_clock": 1.0,
+  "match_minutes_mean": 100.25630252100841,
+  "stints": 11454,
+  "directed_stints": 22908,
+  "stints_per_match": {
+    "mean": 9.63,
+    "min": 3.0,
+    "50%": 10.0,
+    "max": 17.0
+  },
+  "stints_per_season": {
+    "2023/2024": 3767,
+    "2024/2025": 3656,
+    "2025/2026": 3555,
+    "2026/2027": 476
+  },
+  "goals_in_shots_match_final_scores": 1.0,
+  "players_on_pitch_distribution": {
+    "9": 15,
+    "10": 902,
+    "11": 21988,
+    "12": 3
+  },
+  "share_of_minutes_with_11": 0.975432714471313,
+  "gk_on_pitch_share_of_minutes": 0.999547378567537,
+  "state_share_of_minutes": {
+    "-2": 0.0922,
+    "-1": 0.181,
+    "0": 0.4537,
+    "1": 0.181,
+    "2": 0.0922
+  },
+  "manadv_share_of_minutes": {
+    "-1": 0.0232,
+    "0": 0.9535,
+    "1": 0.0232
+  },
+  "stoppage_minutes_mean": {
+    "first": 3.5621848739495796,
+    "second": 6.694117647058824
+  },
+  "player_minutes_vs_minutes_played_corr": 0.9956451142770762,
+  "players_with_zero_time": 51
+}

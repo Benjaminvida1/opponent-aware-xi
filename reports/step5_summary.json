@@ -1,0 +1,30 @@
+{
+  "decisions": {
+    "team_matches": 860,
+    "best_differs_from_usual": 0.963953488372093,
+    "recommended_change": 0.6488372093023256,
+    "mean_changes_best": 2.816279069767442,
+    "mean_changes_when_recommended": 3.240143369175627,
+    "p_better_quantiles": {
+      "0.1": 0.61,
+      "0.25": 0.67,
+      "0.5": 0.763,
+      "0.75": 0.857,
+      "0.9": 0.92
+    },
+    "neutral_differs_from_usual": 0.963953488372093,
+    "best_differs_from_neutral": 0.08488372093023255,
+    "mean_gain_when_recommended": 0.07033631906313151
+  },
+  "forced": {
+    "team_matches_with_missing_regular": 448,
+    "share": 0.5209302325581395,
+    "mean_missing": 1.5803571428571428,
+    "ep_full_minus_actual": 0.001993191572658494
+  },
+  "check_vs_l1_predictions": {
+    "n": 860,
+    "max_abs_diff": 3.864230270211877e-06,
+    "mean_abs_diff": 3.570219741946113e-07
+  }
+}

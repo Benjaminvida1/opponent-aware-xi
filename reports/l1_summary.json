@@ -1,0 +1,76 @@
+{
+  "chosen": {
+    "lam_tau": 4.0,
+    "lam_u": 300.0,
+    "lam_b": 10000.0,
+    "feats": "full",
+    "half_life": 540.0,
+    "carry": 0.75,
+    "n_tied": 17,
+    "tune": {
+      "npxg_dev": 0.3462887513491727,
+      "rps": 0.1939370359539886,
+      "log_loss": 0.9606267198390972
+    },
+    "gk_factor": {
+      "tune_without": {
+        "n": 380,
+        "rps": 0.19393703595398867,
+        "log_loss": 0.9606267198390972,
+        "npxg_deviance": 0.3462887513491727
+      },
+      "tune_with": {
+        "n": 380,
+        "rps": 0.19545278800881774,
+        "log_loss": 0.9647855192411827,
+        "npxg_deviance": 0.3462887513491727
+      },
+      "kept": false
+    }
+  },
+  "variants": {
+    "L1": "hl540_c0.75_t4_u300_b10000_p1_all_full",
+    "Team effects on stints": "hl540_c0.75_t8_u30_b30_p0_all_full",
+    "L1 profile prior only": "hl540_c0.75_t4_uinf_b10000_p1_all_full",
+    "L1 without profile prior": "hl540_c0.75_t4_u300_binf_p1_all_full"
+  },
+  "ratings_as_of": "2026-09-21 15:30:00",
+  "test": {
+    "L0": {
+      "n": 430,
+      "rps": 0.2100712978312826,
+      "log_loss": 1.0355314354721925,
+      "npxg_deviance": 0.35888313779447745
+    },
+    "L1": {
+      "n": 430,
+      "rps": 0.20712975610538456,
+      "log_loss": 1.0270161344486115,
+      "npxg_deviance": 0.35536945794682473
+    },
+    "Team effects on stints": {
+      "n": 430,
+      "rps": 0.21025096881339297,
+      "log_loss": 1.03646478816442,
+      "npxg_deviance": 0.3591418941450319
+    },
+    "L1 profile prior only": {
+      "n": 430,
+      "rps": 0.207779134171718,
+      "log_loss": 1.0288713670675855,
+      "npxg_deviance": 0.35657910037961166
+    },
+    "L1 without profile prior": {
+      "n": 430,
+      "rps": 0.20894934353058436,
+      "log_loss": 1.0326669995254725,
+      "npxg_deviance": 0.3590272797355632
+    },
+    "L1 with keeper factor": {
+      "n": 430,
+      "rps": 0.20698768140212478,
+      "log_loss": 1.0267350366444454,
+      "npxg_deviance": 0.35536945794682473
+    }
+  }
+}

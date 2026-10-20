@@ -1,0 +1,46 @@
+metric,key,seasons,n_teams,r
+Defensive line height (m),def_line_height,2023/2024 -> 2024/2025,17.0,0.8825786189556794
+Attacking height (m),att_height,2023/2024 -> 2024/2025,17.0,0.8766806144945535
+Team length (m),length,2023/2024 -> 2024/2025,17.0,0.6032141473078217
+Team width (m),width,2023/2024 -> 2024/2025,17.0,0.460503305400858
+Centroid height (m),centroid_x,2023/2024 -> 2024/2025,17.0,0.8469457308998876
+Completed passes,passes,2023/2024 -> 2024/2025,17.0,0.8858218315851573
+Pass entropy,entropy,2023/2024 -> 2024/2025,17.0,0.9240915549867379
+Strength inequality (Gini),gini_strength,2023/2024 -> 2024/2025,17.0,0.81071559296853
+Reciprocity,reciprocity,2023/2024 -> 2024/2025,17.0,0.8488117531109575
+Verticality (m per pass),verticality,2023/2024 -> 2024/2025,17.0,0.7502370529891884
+Forward-pass share,forward_share,2023/2024 -> 2024/2025,17.0,0.7254558431397551
+Mean pass span (m),pass_span,2023/2024 -> 2024/2025,17.0,0.42174748023026165
+Flank share,flank_share,2023/2024 -> 2024/2025,17.0,0.10261325487644712
+GK involvement,gk_share,2023/2024 -> 2024/2025,17.0,0.8021456075577136
+Hub dependence (max betweenness),max_betweenness,2023/2024 -> 2024/2025,17.0,0.7380673484589892
+Defensive line height (m),def_line_height,2024/2025 -> 2025/2026,17.0,0.9147797141388163
+Attacking height (m),att_height,2024/2025 -> 2025/2026,17.0,0.9474221656156487
+Team length (m),length,2024/2025 -> 2025/2026,17.0,0.7504028410824747
+Team width (m),width,2024/2025 -> 2025/2026,17.0,0.5354064161107407
+Centroid height (m),centroid_x,2024/2025 -> 2025/2026,17.0,0.8771324891441465
+Completed passes,passes,2024/2025 -> 2025/2026,17.0,0.8489067021691502
+Pass entropy,entropy,2024/2025 -> 2025/2026,17.0,0.8452482430854809
+Strength inequality (Gini),gini_strength,2024/2025 -> 2025/2026,17.0,0.8677234489915565
+Reciprocity,reciprocity,2024/2025 -> 2025/2026,17.0,0.6637218336341729
+Verticality (m per pass),verticality,2024/2025 -> 2025/2026,17.0,0.4571689534088871
+Forward-pass share,forward_share,2024/2025 -> 2025/2026,17.0,0.3350614784248013
+Mean pass span (m),pass_span,2024/2025 -> 2025/2026,17.0,0.47460013506864823
+Flank share,flank_share,2024/2025 -> 2025/2026,17.0,0.618004619843862
+GK involvement,gk_share,2024/2025 -> 2025/2026,17.0,0.801035693780862
+Hub dependence (max betweenness),max_betweenness,2024/2025 -> 2025/2026,17.0,0.4988041313039264
+Defensive line height (m),def_line_height,mean,,0.8986791665472478
+Attacking height (m),att_height,mean,,0.912051390055101
+Team length (m),length,mean,,0.6768084941951482
+Team width (m),width,mean,,0.4979548607557993
+Centroid height (m),centroid_x,mean,,0.862039110022017
+Completed passes,passes,mean,,0.8673642668771537
+Pass entropy,entropy,mean,,0.8846698990361094
+Strength inequality (Gini),gini_strength,mean,,0.8392195209800433
+Reciprocity,reciprocity,mean,,0.7562667933725652
+Verticality (m per pass),verticality,mean,,0.6037030031990378
+Forward-pass share,forward_share,mean,,0.5302586607822781
+Mean pass span (m),pass_span,mean,,0.4481738076494549
+Flank share,flank_share,mean,,0.36030893736015457
+GK involvement,gk_share,mean,,0.8015906506692878
+Hub dependence (max betweenness),max_betweenness,mean,,0.6184357398814578

@@ -1,0 +1,88 @@
+{
+  "chosen": {
+    "L2": [
+      [
+        "styleint:full",
+        1000.0
+      ]
+    ],
+    "L3": [
+      [
+        "styleint:full",
+        1000.0
+      ],
+      [
+        "cols:zone_wide_b15v,zone_half_b15v,zone_centre_b15v,dribble,aerial,press",
+        3000.0
+      ]
+    ],
+    "bandwidth": 15.0,
+    "vulnerability": true,
+    "variants": {
+      "L1": "hl540_c0.75_t4_u300_b10000_p1_all_full",
+      "L2": "hl540_c0.75_t4_u300_b10000_p1_all_full__styleint:full@1000",
+      "L3": "hl540_c0.75_t4_u300_b10000_p1_all_full__styleint:full@1000__cols:zone_wide_b15v,zone_half_b15v,zone_centre_b15v,dribble,aerial,press@3000",
+      "L1 + matchups only": "hl540_c0.75_t4_u300_b10000_p1_all_full__cols:zone_wide_b15v,zone_half_b15v,zone_centre_b15v,dribble,aerial,press@3000",
+      "L3 without network": "hl540_c0.75_t4_u300_b10000_p1_all_full__styleint:none@1000__cols:dribble_nopos,aerial_nopos,press_none@3000",
+      "L3 network geometry only": "hl540_c0.75_t4_u300_b10000_p1_all_full__styleint:geometry@1000__cols:zone_wide_b15v,zone_half_b15v,zone_centre_b15v,dribble,aerial,press_geo@3000"
+    }
+  },
+  "test": {
+    "L0": {
+      "n": 430,
+      "rps": 0.2100712978312826,
+      "log_loss": 1.0355314354721925,
+      "npxg_deviance": 0.35888313779447745,
+      "tune_rps": NaN,
+      "tune_npxg_dev": NaN
+    },
+    "L1": {
+      "n": 430,
+      "rps": 0.20712975610538456,
+      "log_loss": 1.0270161344486115,
+      "npxg_deviance": 0.35536945794682473,
+      "tune_rps": 0.19420249874063625,
+      "tune_npxg_dev": 0.34615848858316717
+    },
+    "L2": {
+      "n": 430,
+      "rps": 0.20700981946472785,
+      "log_loss": 1.0259561652208702,
+      "npxg_deviance": 0.3572062798601565,
+      "tune_rps": 0.1945477775783482,
+      "tune_npxg_dev": 0.3446172851580168
+    },
+    "L3": {
+      "n": 430,
+      "rps": 0.2070037319136496,
+      "log_loss": 1.0259491924393433,
+      "npxg_deviance": 0.35726673627304195,
+      "tune_rps": 0.19453852088441348,
+      "tune_npxg_dev": 0.3447652918360868
+    },
+    "L1 + matchups only": {
+      "n": 430,
+      "rps": 0.207117918005369,
+      "log_loss": 1.0269901838987765,
+      "npxg_deviance": 0.3554362067140835,
+      "tune_rps": 0.1942011001175308,
+      "tune_npxg_dev": 0.34633671095499224
+    },
+    "L3 without network": {
+      "n": 430,
+      "rps": 0.20699679879762728,
+      "log_loss": 1.0266740481013512,
+      "npxg_deviance": 0.3544779352471068,
+      "tune_rps": 0.19397333132784395,
+      "tune_npxg_dev": 0.3460764103684119
+    },
+    "L3 network geometry only": {
+      "n": 430,
+      "rps": 0.20710092073094633,
+      "log_loss": 1.0269542035621144,
+      "npxg_deviance": 0.35554484283357524,
+      "tune_rps": 0.19414209606595892,
+      "tune_npxg_dev": 0.3477634522801582
+    }
+  }
+}

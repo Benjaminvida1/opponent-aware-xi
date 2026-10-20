@@ -1,0 +1,30 @@
+{
+  "npxg": {
+    "half_life_days": 540.0,
+    "ridge": 4.0,
+    "carry": 0.75,
+    "response": "npxg"
+  },
+  "goals": {
+    "half_life_days": 540.0,
+    "ridge": 4.0,
+    "carry": 0.75,
+    "response": "goals"
+  },
+  "n_tied": 30,
+  "best_by_deviance_alone": {
+    "half_life_days": 180.0,
+    "ridge": 4.0,
+    "carry": 0.75,
+    "response": "npxg"
+  },
+  "tune_scores": {
+    "npxg_dev": 0.35160072829667877,
+    "rps": 0.1954871125503348,
+    "log_loss": 0.9672351193258895
+  },
+  "tune_scores_goals_model": {
+    "rps": 0.1987776594664159,
+    "log_loss": 0.9756994109472304
+  }
+}

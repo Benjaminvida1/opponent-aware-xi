@@ -4,18 +4,21 @@ Run:  python src/paper_analyses.py
 
 A. Do passing-network features identify teams?  (supports methodology §5–6)
    Per team-match metrics from the network (shape from the 10 outfield starters,
-   structure from the full-match graph). For 2025/26 (20 teams x 38 matches):
+   structure from the full-match graph). For each full season (2023/24, 2024/25, 2025/26;
+   20 teams x 38 matches each), then averaged over the three seasons:
      - split-half reliability of team means (odd vs even matches by date), Spearman–Brown corrected
      - ICC(1): share of match-to-match variance that is between teams
      - the same after removing the match's possession share (identity beyond possession)
      - variance explained by team, by opponent and by both (two-way OLS; supports the §5.5 decomposition)
+     - season-to-season stability: correlation of team means in consecutive seasons (same teams)
 
 B. Which first-half signal best predicts second-half points?  (supports the xG target, §7)
-   2025/26 split at round 19: per-match points, goal difference and npxG difference in rounds
-   1-19, correlated with points per match in rounds 20-38. Also season points vs expected points.
+   Each full season split at round 19: per-match points, goal difference and npxG difference in
+   rounds 1-19, correlated with points per match in rounds 20-38; pooled over 60 team-seasons
+   (season-centred). Also season points vs expected points.
 
-Outputs: reports/network_reliability.csv, reports/network_variance.csv,
-         reports/split_half_prediction.csv, reports/xpts_2025_26.csv, reports/paper_numbers.json
+Outputs: reports/network_reliability.csv, reports/network_variance.csv, reports/network_stability.csv,
+         reports/split_half_prediction.csv, reports/xpts_by_season.csv, reports/paper_numbers.json
 """
 from __future__ import annotations
 
@@ -68,6 +71,7 @@ def team_match_metrics(nodes: pd.DataFrame, edges: pd.DataFrame, pm: pd.DataFram
         matches[["match_id", "home_team_id", "home_possession"]].rename(columns={"home_team_id": "team_id", "home_possession": "poss"}),
         matches[["match_id", "away_team_id", "away_possession"]].rename(columns={"away_team_id": "team_id", "away_possession": "poss"}),
     ])
+    edge_groups = {k: v for k, v in edges.groupby(["match_id", "team_id"])}
     rows = []
     for (mid, tid), g in nodes.groupby(["match_id", "team_id"]):
         st = g[g.started & ~g.gk]
@@ -84,8 +88,8 @@ def team_match_metrics(nodes: pd.DataFrame, edges: pd.DataFrame, pm: pd.DataFram
                  width=float(2 * np.sqrt(w @ (y - w @ y) ** 2)))
         r["length"] = r["att_height"] - r["def_line_height"]
 
-        ge = edges[(edges.match_id == mid) & (edges.team_id == tid)]
-        pos = g.set_index("player_id")[["x_m", "y_m"]]
+        ge = edge_groups.get((mid, tid), edges.iloc[:0])
+        pos = g.set_index("player_id")[["x_m", "y_m"]].dropna()   # subs with no passes have no position
         ge = ge[ge.passer_id.isin(pos.index) & ge.receiver_id.isin(pos.index)]
         tot = ge.pass_count.sum()
         if tot == 0:
@@ -146,8 +150,35 @@ def dummies(s: pd.Series) -> np.ndarray:
     return pd.get_dummies(s, drop_first=True).to_numpy(float)
 
 
+FULL_SEASONS = ["2023/2024", "2024/2025", "2025/2026"]
+
+
 def network_analysis(df: pd.DataFrame):
-    s = df[df.season == "2025/2026"].copy()
+    rel, var = [], []
+    for season in FULL_SEASONS:
+        r_, v_ = _network_season(df[df.season == season].copy())
+        rel.append(r_.assign(season=season))
+        var.append(v_.assign(season=season))
+    rel, var = pd.concat(rel), pd.concat(var)
+    num = rel.columns.difference(["metric", "key", "season"])
+    rel = pd.concat([rel, rel.groupby(["metric", "key"], sort=False)[list(num)].mean().reset_index().assign(season="mean")])
+    num = var.columns.difference(["metric", "key", "season"])
+    var = pd.concat([var, var.groupby(["metric", "key"], sort=False)[list(num)].mean().reset_index().assign(season="mean")])
+    # Season-to-season stability of team means (teams present in both seasons).
+    stab = []
+    means = df[df.season.isin(FULL_SEASONS)].groupby(["season", "team_id"])[list(METRIC_LABELS)].mean()
+    for a, b in zip(FULL_SEASONS[:-1], FULL_SEASONS[1:]):
+        ma, mb = means.loc[a], means.loc[b]
+        common = ma.index.intersection(mb.index)
+        for col, label in METRIC_LABELS.items():
+            stab.append(dict(metric=label, key=col, seasons=f"{a} -> {b}", n_teams=len(common),
+                             r=float(np.corrcoef(ma.loc[common, col], mb.loc[common, col])[0, 1])))
+    stab = pd.DataFrame(stab)
+    stab = pd.concat([stab, stab.groupby(["metric", "key"], sort=False).r.mean().reset_index().assign(seasons="mean")])
+    return rel, var, stab
+
+
+def _network_season(s: pd.DataFrame):
     rel, var = [], []
     one = np.ones((len(s), 1))
     for col, label in METRIC_LABELS.items():
@@ -188,18 +219,18 @@ def xg_analysis(matches: pd.DataFrame, shots: pd.DataFrame):
     tot = s.groupby(["match_id", "team_id"]).xg.sum()
     np_ = s[s.situation_group != "penalty"].groupby(["match_id", "team_id"]).xg.sum()
     rows = []
-    for r in matches[matches.season == "2025/2026"].itertuples():
+    for r in matches[matches.season.isin(FULL_SEASONS)].itertuples():
         for tid, oid, team, gf, ga in [(r.home_team_id, r.away_team_id, r.home_team, r.home_score, r.away_score),
                                        (r.away_team_id, r.home_team_id, r.away_team, r.away_score, r.home_score)]:
             xf, xa = tot.get((r.match_id, tid), 0.0), tot.get((r.match_id, oid), 0.0)
-            rows.append(dict(match_id=r.match_id, round=r.round, date=r.date, team=team, gf=gf, ga=ga,
+            rows.append(dict(match_id=r.match_id, season=r.season, round=r.round, date=r.date, team=team, gf=gf, ga=ga,
                              pts=int(result_points(gf, ga)), npxg_for=np_.get((r.match_id, tid), 0.0),
                              npxg_against=np_.get((r.match_id, oid), 0.0), xpts=xpts(xf, xa)))
     tm = pd.DataFrame(rows)
     tm["half"] = np.where(tm["round"] <= 19, "first", "second")
-    agg = tm.groupby(["team", "half"]).agg(pts=("pts", "mean"), gd=("gf", "mean"), ga=("ga", "mean"),
-                                            npxgd=("npxg_for", "mean"), npxga=("npxg_against", "mean"),
-                                            xpts=("xpts", "mean")).unstack()
+    agg = tm.groupby(["season", "team", "half"]).agg(pts=("pts", "mean"), gd=("gf", "mean"), ga=("ga", "mean"),
+                                                      npxgd=("npxg_for", "mean"), npxga=("npxg_against", "mean"),
+                                                      xpts=("xpts", "mean")).unstack()
     first = pd.DataFrame({
         "Points per match": agg[("pts", "first")],
         "Goal difference per match": agg[("gd", "first")] - agg[("ga", "first")],
@@ -207,22 +238,29 @@ def xg_analysis(matches: pd.DataFrame, shots: pd.DataFrame):
         "Expected points per match": agg[("xpts", "first")],
     })
     target = agg[("pts", "second")]
+    # Centre within season so the pooled correlation is not driven by season-level shifts.
+    first = first - first.groupby(level="season").transform("mean")
+    target = target - target.groupby(level="season").transform("mean")
     pred = []
     for name, v in first.items():
-        pred.append(dict(predictor=name, r=float(np.corrcoef(v, target)[0, 1]),
+        pred.append(dict(predictor=name, season="pooled", n=len(v), r=float(np.corrcoef(v, target)[0, 1]),
                          r2=float(np.corrcoef(v, target)[0, 1] ** 2)))
+        for se in FULL_SEASONS:
+            a, b = v.xs(se, level="season"), target.xs(se, level="season")
+            pred.append(dict(predictor=name, season=se, n=len(a), r=float(np.corrcoef(a, b)[0, 1]),
+                             r2=float(np.corrcoef(a, b)[0, 1] ** 2)))
     pred = pd.DataFrame(pred)
     # bootstrap the difference between npxG-diff and points as predictors (resample teams)
     rng = np.random.default_rng(0)
     idx = rng.integers(0, len(target), (5000, len(target)))
     a, b, t = first["npxG difference per match"].to_numpy(), first["Points per match"].to_numpy(), target.to_numpy()
     diffs = np.array([np.corrcoef(a[i], t[i])[0, 1] - np.corrcoef(b[i], t[i])[0, 1] for i in idx])
-    season = tm.groupby("team").agg(points=("pts", "sum"), xpts=("xpts", "sum"),
-                                    goals_for=("gf", "sum"), goals_against=("ga", "sum"),
-                                    npxg_for=("npxg_for", "sum"), npxg_against=("npxg_against", "sum")).reset_index()
+    season = tm.groupby(["season", "team"]).agg(points=("pts", "sum"), xpts=("xpts", "sum"),
+                                                goals_for=("gf", "sum"), goals_against=("ga", "sum"),
+                                                npxg_for=("npxg_for", "sum"), npxg_against=("npxg_against", "sum")).reset_index()
     season["points_minus_xpts"] = season.points - season.xpts
-    season = season.sort_values("points", ascending=False).reset_index(drop=True)
-    season.insert(0, "position", np.arange(1, len(season) + 1))
+    season = season.sort_values(["season", "points"], ascending=[True, False]).reset_index(drop=True)
+    season.insert(1, "position", season.groupby("season").cumcount() + 1)
     boot = dict(diff_r=float(np.median(diffs)), ci_low=float(np.quantile(diffs, 0.025)), ci_high=float(np.quantile(diffs, 0.975)))
     return pred, season, boot
 
@@ -236,25 +274,30 @@ def main():
 
     tm = team_match_metrics(nodes, edges, pm, matches)
     tm.to_parquet(PROC / "team_match_network_metrics.parquet", index=False)
-    rel, var = network_analysis(tm)
+    rel, var, stab = network_analysis(tm)
     rel.to_csv(REPORTS / "network_reliability.csv", index=False)
     var.to_csv(REPORTS / "network_variance.csv", index=False)
+    stab.to_csv(REPORTS / "network_stability.csv", index=False)
 
     pred, season, boot = xg_analysis(matches, shots)
     pred.to_csv(REPORTS / "split_half_prediction.csv", index=False)
-    season.to_csv(REPORTS / "xpts_2025_26.csv", index=False)
+    season.to_csv(REPORTS / "xpts_by_season.csv", index=False)
 
-    numbers = dict(team_matches_with_metrics=int(len(tm)), npxg_minus_points_r=boot,
-                   corr_points_xpts_season=float(np.corrcoef(season.points, season.xpts)[0, 1]))
+    numbers = dict(team_matches_with_metrics=int(len(tm)),
+                   team_matches_by_season=tm.groupby("season").size().to_dict(),
+                   npxg_minus_points_r_pooled=boot,
+                   corr_points_xpts_season=float(np.corrcoef(season.points, season.xpts)[0, 1]),
+                   mean_abs_points_minus_xpts=float(season.points_minus_xpts.abs().mean()))
     (REPORTS / "paper_numbers.json").write_text(json.dumps(numbers, indent=2))
-    return rel, var, pred, season, numbers
+    return rel, var, stab, pred, season, numbers
 
 
 if __name__ == "__main__":
     pd.set_option("display.width", 220)
-    rel, var, pred, season, numbers = main()
-    print(rel.drop(columns="key").round(3).to_string(index=False))
-    print(var.drop(columns="key").round(3).to_string(index=False))
+    rel, var, stab, pred, season, numbers = main()
+    print(rel[rel.season == "mean"].drop(columns="key").round(3).to_string(index=False))
+    print(var[var.season == "mean"].drop(columns="key").round(3).to_string(index=False))
+    print(stab[stab.seasons == "mean"].round(3).to_string(index=False))
     print(pred.round(3).to_string(index=False))
     print(season.round(1).to_string(index=False))
     print(json.dumps(numbers, indent=2))

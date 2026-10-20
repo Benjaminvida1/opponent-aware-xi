@@ -1,0 +1,28 @@
+{
+  "L2": [
+    [
+      "styleint:full",
+      1000.0
+    ]
+  ],
+  "L3": [
+    [
+      "styleint:full",
+      1000.0
+    ],
+    [
+      "cols:zone_wide_b15v,zone_half_b15v,zone_centre_b15v,dribble,aerial,press",
+      3000.0
+    ]
+  ],
+  "bandwidth": 15.0,
+  "vulnerability": true,
+  "variants": {
+    "L1": "hl540_c0.75_t4_u300_b10000_p1_all_full",
+    "L2": "hl540_c0.75_t4_u300_b10000_p1_all_full__styleint:full@1000",
+    "L3": "hl540_c0.75_t4_u300_b10000_p1_all_full__styleint:full@1000__cols:zone_wide_b15v,zone_half_b15v,zone_centre_b15v,dribble,aerial,press@3000",
+    "L1 + matchups only": "hl540_c0.75_t4_u300_b10000_p1_all_full__cols:zone_wide_b15v,zone_half_b15v,zone_centre_b15v,dribble,aerial,press@3000",
+    "L3 without network": "hl540_c0.75_t4_u300_b10000_p1_all_full__styleint:none@1000__cols:dribble_nopos,aerial_nopos,press_none@3000",
+    "L3 network geometry only": "hl540_c0.75_t4_u300_b10000_p1_all_full__styleint:geometry@1000__cols:zone_wide_b15v,zone_half_b15v,zone_centre_b15v,dribble,aerial,press_geo@3000"
+  }
+}

@@ -4,9 +4,14 @@ Model, per directed team-match side A -> B in match m:
 
     log E[npxG_{A->B,m}] = mu + h * home_{A,m} + att_A - def_B
 
-fitted by weighted quasi-Poisson likelihood with match weights exp(-xi * age_days) and a
-ridge penalty pulling att/def toward a prior centre (0 for established teams; the mean
-rating of the relegated sides for promoted teams at a season start).
+fitted by weighted quasi-Poisson likelihood with match weights
+
+    w_m = 0.5 ** (age_days / half_life) * carry ** (seasons back)
+
+and a ridge penalty pulling att/def toward a prior centre (0 = league average for established
+teams; the mean rating of the relegated sides for promoted teams). The season carry-over factor
+(carry <= 1) down-weights earlier seasons beyond the smooth time decay, which shrinks carried-over
+ratings toward the prior at each summer break (methodology §7.1, omega).
 
 Everything is refit "as of" each prediction date: a match on date d is predicted only
 from matches played strictly before d.
@@ -46,6 +51,8 @@ def team_match_sides(matches: pd.DataFrame, shots: pd.DataFrame) -> pd.DataFrame
             rows.append(dict(match_id=r.match_id, season=r.season, round=r.round, date=r.date, home=side,
                              team=team, team_id=tid, opponent=opp, opponent_id=oid, goals=gf, goals_against=ga))
     df = pd.DataFrame(rows)
+    order = {s: k for k, s in enumerate(sorted(matches.season.unique()))}
+    df["season_idx"] = df.season.map(order)
     df = df.join(agg, on=["match_id", "team_id"])
     for c in ["npxg", "xg_open_play", "xg_set_piece", "pen_xg", "shots"]:
         df[c] = df[c].fillna(0.0)
@@ -58,10 +65,12 @@ class StrengthModel:
     half_life_days: float = 120.0      # xi = ln 2 / half-life; np.inf = no decay
     ridge: float = 2.0                 # penalty weight on (att - prior)^2 + (def - prior)^2
     response: str = "npxg"             # "npxg" or "goals"
+    carry: float = 1.0                 # extra weight per season back (1 = time decay only)
     teams: list = field(default_factory=list)
     params: dict = field(default_factory=dict)
 
-    def fit(self, sides: pd.DataFrame, as_of: pd.Timestamp, prior: dict[int, tuple[float, float]] | None = None):
+    def fit(self, sides: pd.DataFrame, as_of: pd.Timestamp, prior: dict[int, tuple[float, float]] | None = None,
+            season_idx: int | None = None):
         d = sides[sides.date < as_of]
         self.teams = sorted(set(d.team_id) | set(d.opponent_id) | set((prior or {}).keys()))
         idx = {t: k for k, t in enumerate(self.teams)}
@@ -72,6 +81,8 @@ class StrengthModel:
         y = d[self.response].to_numpy(float)
         age = (as_of - d.date).dt.total_seconds().to_numpy() / 86400
         w = np.ones_like(age) if np.isinf(self.half_life_days) else 0.5 ** (age / self.half_life_days)
+        if self.carry < 1 and season_idx is not None and "season_idx" in d:
+            w = w * self.carry ** np.clip(season_idx - d.season_idx.to_numpy(), 0, None)
         pa = np.zeros(n)
         pd_ = np.zeros(n)
         for t, (a0, d0) in (prior or {}).items():
@@ -99,6 +110,12 @@ class StrengthModel:
         self.params = dict(mu=th[0], home=th[1], att=dict(zip(self.teams, th[2:2 + n])),
                            defence=dict(zip(self.teams, th[2 + n:])), n_obs=len(y), weight_sum=w.sum())
         return self
+
+    def rates(self, team_ids, opp_ids, home: int) -> np.ndarray:
+        p = self.params
+        att = pd.Series(p["att"]).reindex(np.asarray(team_ids)).fillna(0).to_numpy()
+        dfn = pd.Series(p["defence"]).reindex(np.asarray(opp_ids)).fillna(0).to_numpy()
+        return np.exp(p["mu"] + p["home"] * home + att - dfn)
 
     def rate(self, team_id: int, opp_id: int, home: int) -> float:
         p = self.params
@@ -174,7 +191,7 @@ def season_start_prior(sides: pd.DataFrame, matches: pd.DataFrame, model_kw: dic
     cur_teams = set(matches.loc[matches.season == cur, "home_team_id"])
     promoted, relegated = cur_teams - prev_teams, prev_teams - cur_teams
     start = matches.loc[matches.season == cur, "date"].min()
-    m = StrengthModel(**model_kw).fit(sides, start)
+    m = StrengthModel(**model_kw).fit(sides, start, season_idx=k - 1)
     a0 = float(np.mean([m.params["att"][t] for t in relegated]))
     d0 = float(np.mean([m.params["defence"][t] for t in relegated]))
     return {t: (a0, d0) for t in promoted}
@@ -187,21 +204,22 @@ def rolling_predictions(matches: pd.DataFrame, sides: pd.DataFrame, model_kw: di
     Goals ~ Poisson(c * (predicted npxG + league penalty xG per team-match)), with c and the
     Dixon–Coles rho both estimated from matches before the prediction date.
     """
-    promoted_prior = {s: season_start_prior(sides, matches, model_kw, s) for s in matches.season.unique()}
+    seasons = sorted(matches.season.unique())
     target = matches if eval_mask is None else matches[eval_mask]
+    promoted_prior = {s: season_start_prior(sides, matches, model_kw, s) for s in target.season.unique()}
     out = []
     for date, day in target.groupby(target.date.dt.floor("D")):
         as_of = day.date.min()
         season = day.season.iloc[0]
-        m = StrengthModel(**model_kw).fit(sides, as_of, promoted_prior.get(season))
+        m = StrengthModel(**model_kw).fit(sides, as_of, promoted_prior.get(season), seasons.index(season))
         past = sides[sides.date < as_of]
         pen_rate = past.pen_xg.mean() if len(past) else 0.09
         c = (past.goals.sum() / (past.npxg + past.pen_xg).sum()) if len(past) else 1.0
         rho = 0.0
         if dixon_coles and len(past):
             pm_ = matches[matches.date < as_of]
-            fh = np.array([c * (m.rate(r.home_team_id, r.away_team_id, 1) + pen_rate) for r in pm_.itertuples()])
-            fa = np.array([c * (m.rate(r.away_team_id, r.home_team_id, 0) + pen_rate) for r in pm_.itertuples()])
+            fh = c * (m.rates(pm_.home_team_id, pm_.away_team_id, 1) + pen_rate)
+            fa = c * (m.rates(pm_.away_team_id, pm_.home_team_id, 0) + pen_rate)
             age = (as_of - pm_.date).dt.total_seconds().to_numpy() / 86400
             hl = model_kw.get("half_life_days", np.inf)
             w = np.ones_like(age) if np.isinf(hl) else 0.5 ** (age / hl)
