@@ -1,0 +1,504 @@
+{
+  "tokens": {
+    "surface": "#fcfcfb",
+    "ink": "#0b0b0b",
+    "ink_2": "#52514e",
+    "ink_3": "#8a8983",
+    "line": "#d6d5cf",
+    "neutral_mid": "#a9a8a1",
+    "neutral_light": "#c9c8c2",
+    "muted_fill": "#f0efec"
+  },
+  "clubs": {
+    "AFC Bournemouth": {
+      "team": "AFC Bournemouth",
+      "kit": "#DA291C",
+      "alt": "#1A1A1A",
+      "chart": "#DA291C",
+      "chart_alt": "#1A1A1A",
+      "ink": "#ffffff",
+      "ink_alt": "#ffffff",
+      "tint": "#f8eceb",
+      "ramp": [
+        "#f3dbda",
+        "#eec7c5",
+        "#e9b0ae",
+        "#e49492",
+        "#df6f6c",
+        "#da291c"
+      ]
+    },
+    "Arsenal": {
+      "team": "Arsenal",
+      "kit": "#EF0107",
+      "alt": "#063672",
+      "chart": "#EF0107",
+      "chart_alt": "#063672",
+      "ink": "#ffffff",
+      "ink_alt": "#ffffff",
+      "tint": "#faeceb",
+      "ramp": [
+        "#f8dad9",
+        "#f7c5c5",
+        "#f5aead",
+        "#f39090",
+        "#f16969",
+        "#ef0107"
+      ]
+    },
+    "Aston Villa": {
+      "team": "Aston Villa",
+      "kit": "#670E36",
+      "alt": "#95BFE5",
+      "chart": "#670E36",
+      "chart_alt": "#7096b8",
+      "ink": "#ffffff",
+      "ink_alt": "#0b0b0b",
+      "tint": "#eeecec",
+      "ramp": [
+        "#dfdadb",
+        "#cec6c7",
+        "#bbaeb1",
+        "#a59196",
+        "#8b6a73",
+        "#670e36"
+      ]
+    },
+    "Brentford": {
+      "team": "Brentford",
+      "kit": "#E30613",
+      "alt": "#1A1A1A",
+      "chart": "#E30613",
+      "chart_alt": "#1A1A1A",
+      "ink": "#ffffff",
+      "ink_alt": "#ffffff",
+      "tint": "#f9eceb",
+      "ramp": [
+        "#f5dad9",
+        "#f2c5c5",
+        "#eeaead",
+        "#eb9191",
+        "#e7696a",
+        "#e30613"
+      ]
+    },
+    "Brighton & Hove Albion": {
+      "team": "Brighton & Hove Albion",
+      "kit": "#0057B8",
+      "alt": "#FFCD00",
+      "chart": "#0057B8",
+      "chart_alt": "#b68b00",
+      "ink": "#ffffff",
+      "ink_alt": "#0b0b0b",
+      "tint": "#ecedf3",
+      "ramp": [
+        "#dadeeb",
+        "#c5cce2",
+        "#adb7d8",
+        "#909fce",
+        "#6982c4",
+        "#0057b8"
+      ]
+    },
+    "Burnley": {
+      "team": "Burnley",
+      "kit": "#6C1D45",
+      "alt": "#99D6EA",
+      "chart": "#6C1D45",
+      "chart_alt": "#6499aa",
+      "ink": "#ffffff",
+      "ink_alt": "#0b0b0b",
+      "tint": "#eeecec",
+      "ramp": [
+        "#e0dadb",
+        "#cfc6c9",
+        "#bcafb3",
+        "#a79299",
+        "#8e6c79",
+        "#6c1d45"
+      ]
+    },
+    "Chelsea": {
+      "team": "Chelsea",
+      "kit": "#034694",
+      "alt": "#DBA111",
+      "chart": "#034694",
+      "chart_alt": "#bf8900",
+      "ink": "#ffffff",
+      "ink_alt": "#0b0b0b",
+      "tint": "#ecedf0",
+      "ramp": [
+        "#dadce4",
+        "#c5c9d7",
+        "#aeb4c9",
+        "#909aba",
+        "#6979a8",
+        "#034694"
+      ]
+    },
+    "Coventry City": {
+      "team": "Coventry City",
+      "kit": "#59CBE8",
+      "alt": "#1A1A1A",
+      "chart": "#2f9db7",
+      "chart_alt": "#1A1A1A",
+      "ink": "#0b0b0b",
+      "ink_alt": "#ffffff",
+      "tint": "#ecf2f3",
+      "ramp": [
+        "#dbe7eb",
+        "#c7dae1",
+        "#b0cdd8",
+        "#95bfce",
+        "#71afc3",
+        "#2f9db7"
+      ]
+    },
+    "Crystal Palace": {
+      "team": "Crystal Palace",
+      "kit": "#1B458F",
+      "alt": "#C4122E",
+      "chart": "#1B458F",
+      "chart_alt": "#C4122E",
+      "ink": "#ffffff",
+      "ink_alt": "#ffffff",
+      "tint": "#ecedf0",
+      "ramp": [
+        "#dadce3",
+        "#c6c9d6",
+        "#afb4c7",
+        "#929ab7",
+        "#6c79a5",
+        "#1b458f"
+      ]
+    },
+    "Everton": {
+      "team": "Everton",
+      "kit": "#003399",
+      "alt": "#F2A900",
+      "chart": "#003399",
+      "chart_alt": "#c78500",
+      "ink": "#ffffff",
+      "ink_alt": "#0b0b0b",
+      "tint": "#ececf0",
+      "ramp": [
+        "#dadbe5",
+        "#c5c8d9",
+        "#adb1cb",
+        "#9096bc",
+        "#6972ac",
+        "#003399"
+      ]
+    },
+    "Fulham": {
+      "team": "Fulham",
+      "kit": "#1A1A1A",
+      "alt": "#CC0000",
+      "chart": "#1A1A1A",
+      "chart_alt": "#CC0000",
+      "ink": "#ffffff",
+      "ink_alt": "#ffffff",
+      "tint": "#ececeb",
+      "ramp": [
+        "#dadad9",
+        "#c6c6c5",
+        "#afafae",
+        "#929291",
+        "#6c6c6b",
+        "#1a1a1a"
+      ]
+    },
+    "Hull City": {
+      "team": "Hull City",
+      "kit": "#F5A12D",
+      "alt": "#1A1A1A",
+      "chart": "#cd8000",
+      "chart_alt": "#1A1A1A",
+      "ink": "#0b0b0b",
+      "ink_alt": "#ffffff",
+      "tint": "#f6f0eb",
+      "ramp": [
+        "#f0e2d9",
+        "#ead3c5",
+        "#e3c3ad",
+        "#dcb090",
+        "#d59a68",
+        "#cd8000"
+      ]
+    },
+    "Ipswich Town": {
+      "team": "Ipswich Town",
+      "kit": "#3A64A3",
+      "alt": "#DE2C37",
+      "chart": "#3A64A3",
+      "chart_alt": "#DE2C37",
+      "ink": "#ffffff",
+      "ink_alt": "#ffffff",
+      "tint": "#edeef1",
+      "ramp": [
+        "#dcdfe7",
+        "#c8cedb",
+        "#b2bacf",
+        "#97a4c2",
+        "#7589b3",
+        "#3a64a3"
+      ]
+    },
+    "Leeds United": {
+      "team": "Leeds United",
+      "kit": "#1D428A",
+      "alt": "#FFCD00",
+      "chart": "#1D428A",
+      "chart_alt": "#b68b00",
+      "ink": "#ffffff",
+      "ink_alt": "#0b0b0b",
+      "tint": "#ecedef",
+      "ramp": [
+        "#dadce3",
+        "#c6c9d5",
+        "#afb3c5",
+        "#9299b4",
+        "#6c78a1",
+        "#1d428a"
+      ]
+    },
+    "Leicester City": {
+      "team": "Leicester City",
+      "kit": "#003090",
+      "alt": "#FDBE11",
+      "chart": "#003090",
+      "chart_alt": "#bd8600",
+      "ink": "#ffffff",
+      "ink_alt": "#0b0b0b",
+      "tint": "#ececf0",
+      "ramp": [
+        "#dadbe4",
+        "#c5c7d6",
+        "#adb1c8",
+        "#9095b7",
+        "#6971a5",
+        "#003090"
+      ]
+    },
+    "Liverpool": {
+      "team": "Liverpool",
+      "kit": "#C8102E",
+      "alt": "#00B2A9",
+      "chart": "#C8102E",
+      "chart_alt": "#00a299",
+      "ink": "#ffffff",
+      "ink_alt": "#0b0b0b",
+      "tint": "#f6eceb",
+      "ramp": [
+        "#efdada",
+        "#e8c6c6",
+        "#e0aeb0",
+        "#d99194",
+        "#d16a70",
+        "#c8102e"
+      ]
+    },
+    "Luton Town": {
+      "team": "Luton Town",
+      "kit": "#F78F1E",
+      "alt": "#002D62",
+      "chart": "#d97700",
+      "chart_alt": "#002D62",
+      "ink": "#0b0b0b",
+      "ink_alt": "#ffffff",
+      "tint": "#f7efeb",
+      "ramp": [
+        "#f3e1d9",
+        "#eed1c5",
+        "#e9c0ad",
+        "#e4ac90",
+        "#de9468",
+        "#d97700"
+      ]
+    },
+    "Manchester City": {
+      "team": "Manchester City",
+      "kit": "#6CABDD",
+      "alt": "#1C2C5B",
+      "chart": "#5c98c8",
+      "chart_alt": "#1C2C5B",
+      "ink": "#0b0b0b",
+      "ink_alt": "#ffffff",
+      "tint": "#eef1f5",
+      "ramp": [
+        "#dee6ee",
+        "#ccd9e7",
+        "#b8cbe0",
+        "#a1bcd8",
+        "#84abd0",
+        "#5c98c8"
+      ]
+    },
+    "Manchester United": {
+      "team": "Manchester United",
+      "kit": "#DA291C",
+      "alt": "#1A1A1A",
+      "chart": "#DA291C",
+      "chart_alt": "#1A1A1A",
+      "ink": "#ffffff",
+      "ink_alt": "#ffffff",
+      "tint": "#f8eceb",
+      "ramp": [
+        "#f3dbda",
+        "#eec7c5",
+        "#e9b0ae",
+        "#e49492",
+        "#df6f6c",
+        "#da291c"
+      ]
+    },
+    "Newcastle United": {
+      "team": "Newcastle United",
+      "kit": "#241F20",
+      "alt": "#41B6E6",
+      "chart": "#241F20",
+      "chart_alt": "#279cc9",
+      "ink": "#ffffff",
+      "ink_alt": "#0b0b0b",
+      "tint": "#ececeb",
+      "ramp": [
+        "#dbdada",
+        "#c7c6c6",
+        "#afafae",
+        "#939392",
+        "#6e6d6c",
+        "#241f20"
+      ]
+    },
+    "Nottingham Forest": {
+      "team": "Nottingham Forest",
+      "kit": "#DD0000",
+      "alt": "#1A1A1A",
+      "chart": "#DD0000",
+      "chart_alt": "#1A1A1A",
+      "ink": "#ffffff",
+      "ink_alt": "#ffffff",
+      "tint": "#f8eceb",
+      "ramp": [
+        "#f4dad9",
+        "#f0c5c5",
+        "#ebadad",
+        "#e69090",
+        "#e26968",
+        "#dd0000"
+      ]
+    },
+    "Sheffield United": {
+      "team": "Sheffield United",
+      "kit": "#EE2737",
+      "alt": "#1A1A1A",
+      "chart": "#EE2737",
+      "chart_alt": "#1A1A1A",
+      "ink": "#0b0b0b",
+      "ink_alt": "#ffffff",
+      "tint": "#faecec",
+      "ramp": [
+        "#f8dbdb",
+        "#f6c7c7",
+        "#f4b0b1",
+        "#f29496",
+        "#f06f73",
+        "#ee2737"
+      ]
+    },
+    "Southampton": {
+      "team": "Southampton",
+      "kit": "#D71920",
+      "alt": "#FFC20E",
+      "chart": "#D71920",
+      "chart_alt": "#bc8700",
+      "ink": "#ffffff",
+      "ink_alt": "#0b0b0b",
+      "tint": "#f7eceb",
+      "ramp": [
+        "#f2dada",
+        "#edc6c6",
+        "#e8afae",
+        "#e29292",
+        "#dd6c6c",
+        "#d71920"
+      ]
+    },
+    "Sunderland": {
+      "team": "Sunderland",
+      "kit": "#EB172B",
+      "alt": "#1A1A1A",
+      "chart": "#EB172B",
+      "chart_alt": "#1A1A1A",
+      "ink": "#ffffff",
+      "ink_alt": "#ffffff",
+      "tint": "#faeceb",
+      "ramp": [
+        "#f7dada",
+        "#f5c6c6",
+        "#f3aeaf",
+        "#f09294",
+        "#ee6b6f",
+        "#eb172b"
+      ]
+    },
+    "Tottenham Hotspur": {
+      "team": "Tottenham Hotspur",
+      "kit": "#132257",
+      "alt": "#2BB5A4",
+      "chart": "#132257",
+      "chart_alt": "#0ea191",
+      "ink": "#ffffff",
+      "ink_alt": "#0b0b0b",
+      "tint": "#ececed",
+      "ramp": [
+        "#dadbdd",
+        "#c6c6cb",
+        "#aeafb7",
+        "#91939f",
+        "#6b6d81",
+        "#132257"
+      ]
+    },
+    "West Ham United": {
+      "team": "West Ham United",
+      "kit": "#7A263A",
+      "alt": "#1BB1E7",
+      "chart": "#7A263A",
+      "chart_alt": "#009ed1",
+      "ink": "#ffffff",
+      "ink_alt": "#0b0b0b",
+      "tint": "#efecec",
+      "ramp": [
+        "#e1dbdb",
+        "#d2c7c7",
+        "#c1b0b1",
+        "#ad9497",
+        "#966e74",
+        "#7a263a"
+      ]
+    },
+    "Wolverhampton Wanderers": {
+      "team": "Wolverhampton Wanderers",
+      "kit": "#FDB913",
+      "alt": "#231F20",
+      "chart": "#c08500",
+      "chart_alt": "#231F20",
+      "ink": "#0b0b0b",
+      "ink_alt": "#ffffff",
+      "tint": "#f5f0eb",
+      "ramp": [
+        "#ede3d9",
+        "#e5d4c5",
+        "#ddc4ad",
+        "#d4b290",
+        "#ca9e68",
+        "#c08500"
+      ]
+    }
+  },
+  "rules": {
+    "min_contrast": 3.0,
+    "clash_delta_e_oklab": 0.15
+  }
+}

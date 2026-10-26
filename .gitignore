@@ -4,3 +4,5 @@ __pycache__/
 .ipynb_checkpoints/
 .DS_Store
 reports/*_log.txt
+
+data/processed/dash_*.parquet

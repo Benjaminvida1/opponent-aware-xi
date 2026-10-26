@@ -6,3 +6,4 @@ networkx>=3.2
 matplotlib>=3.8
 jupyter
 scikit-learn>=1.4
+mplsoccer>=1.4

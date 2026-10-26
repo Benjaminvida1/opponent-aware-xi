@@ -22,6 +22,19 @@ All results are on the 430 test matches (2025/26 and 2026/27 rounds 1–5). Ever
 | Round-level bootstrap (43 rounds instead of 430 matches) | same verdicts; intervals 0.82–1.17× as wide | `src/robustness.py` → `reports/robustness_round_bootstrap.csv` |
 | Player model fitted on whole matches instead of stints, vs L1 | +0.0015 (+0.0006 to +0.0024): about half of L1's gain needs stints | `reports/robustness_match_level.csv` |
 
+## Dashboard
+
+**[Explore the interactive dashboard](https://benjaminvida1.github.io/opponent-aware-xi/)**: every match's shots, passing networks and team shapes in club colours; the model's forecast and lineup call for each test match; player radars (percentile or standardised, with the model's impact ratings); team strength over time and playing style.
+
+The site is static (`docs/`, served by GitHub Pages). Rebuild its data after changing the processed tables:
+
+```bash
+python src/build_site.py     # writes docs/data/ (about a minute)
+python tests/test_viz.py     # checks for the visual layer
+```
+
+The plotting code (`src/viz_*.py`) also draws the same charts as PNGs; `reports/dashboard/README.md` documents the data and design rules.
+
 ## Quick start
 
 ```bash
